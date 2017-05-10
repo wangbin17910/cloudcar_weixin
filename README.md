@@ -1,9 +1,6 @@
-# weapp-demo-breadtrip
+# weapp-cloudcar
 
-A [Wechat-App](https://mp.weixin.qq.com/debug/wxadoc/dev/index.html) demo based on [Breadtrip](http://breadtrip.com/) API
-
-## ScreenShot
-![demo](./screenshot/demo.png)
+A [Wechat-App](https://mp.weixin.qq.com/debug/wxadoc/dev/index.html) demo based on [YUnche](http://www.yunchehudong.com/) API
 
 ## Features
 

@@ -1,9 +1,0 @@
-{
-  "extends": "airbnb-base",
-  "globals": {
-    "wx": false,
-    "App": false,
-    "Page": false,
-    "getApp": false
-  }
-}
