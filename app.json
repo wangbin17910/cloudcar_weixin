@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/explore/explore",
+    "pages/destination/destination",
+    "pages/poi_list/poi_list",
+    "pages/trip_list/trip_list",
+    "pages/waypoint/waypoint",
+    "pages/user/user",
+    "pages/trip/trip"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#479de6",
+    "navigationBarTitleText": "面包旅行",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#b0b0b0",
+    "selectedColor": "#479de6",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath": "images/welfare_normal.png",
+      "selectedIconPath": "images/welfare_pressed.png",
+      "text": "福利"
+    }, {
+      "pagePath": "pages/explore/explore",
+      "iconPath": "images/user_normal.png",
+      "selectedIconPath": "images/user_pressed.png",
+      "text": "我的"
+    }]
+  },
+  "debug": true
+}
