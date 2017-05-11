@@ -1,64 +1,64 @@
-const App = getApp();
-const api = require('../../utils/api.js');
-const util = require('../../utils/util.js');
-
-const formatTime = util.formatTime;
+//index.js
+//获取应用实例
+var app = getApp()
+var util = require('../../utils/util');
 
 Page({
   data: {
-    trips: [],
-    start: 0,
-    loading: false,
-    windowWidth: App.systemInfo.windowWidth,
-    windowHeight: App.systemInfo.windowHeight,
+    banner: null,
+    autoplay: true,
+    interval: 2000,
+    duration: 1000,
+    txtAds: null,
+    advertise: null
   },
-  onLoad() {
-    this.loadMore();
-  },
-  onPullDownRefresh() {
-    this.loadMore(null, true);
-  },
-  loadMore(e, needRefresh) {
-    const self = this;
-    const loading = self.data.loading;
-    const data = {
-      next_start: self.data.start,
-    };
-    if (loading) {
-      return;
-    }
-    self.setData({
-      loading: true,
-    });
-    api.getHotTripList({
-      data,
-      success: (res) => {
-        let newList = res.data.data.elements;
-        newList.map((trip) => {
-          const item = trip;
-          item.data[0].date_added = formatTime(new Date(item.data[0].date_added * 1000), 1);
-          return item;
-        });
-        if (needRefresh) {
-          wx.stopPullDownRefresh();
-        } else {
-          newList = self.data.trips.concat(newList);
-        }
-        self.setData({
-          trips: newList,
-        });
-        const nextStart = res.data.data.next_start;
-        self.setData({
-          start: nextStart,
-          loading: false,
-        });
-      },
+  /*
+  * 首页banner
+  */
+  setBanner: function () {
+    let that = this;
+    util.fetch('http://api.cyb.kuaiqiangche.com/event/advertise/banner', function (data) {
+      that.setData({
+        banner: data.data
+      });
     });
   },
-  viewTrip(e) {
-    const ds = e.currentTarget.dataset;
-    wx.navigateTo({
-      url: `../trip/trip?id=${ds.id}&name=${ds.name}`,
+  /**
+   * 首页文字广告
+   */
+  setTxtAds: function(){
+    let that = this;
+    util.fetch('http://api.cyb.kuaiqiangche.com/event/advertise/roll', function (data) {
+      that.setData({
+        txtAds: data.data[0]
+      });
     });
   },
+  /**
+   * 首页两块子banner
+   */
+  setSubBanner: function(){
+    let that = this;
+    util.fetch('http://api.cyb.kuaiqiangche.com/event/advertise/index', function (data) {
+      that.setData({
+        advertise: data.data
+      });
+    });
+  },
+  /**
+   * 模块入口
+   */
+  setModule: function(){
+
+  },
+  /**
+   * 入口
+   */
+  onLoad: function () {
+    var that = this;
+    that.setBanner();
+    that.setTxtAds();
+    that.setSubBanner();
+    that.setModule();
+  }
 });
