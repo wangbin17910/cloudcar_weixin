@@ -8,8 +8,7 @@
     "pages/waypoint/waypoint",
     "pages/user/user",
     "pages/trip/trip",
-    "pages/profile/profile",
-    "pages/welfare/welfare"
+    "pages/profile/profile"
   ],
   "window": {
     "backgroundTextStyle": "dark",

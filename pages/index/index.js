@@ -1,6 +1,6 @@
-//index.js
 //获取应用实例
 var app = getApp()
+var api = require('../../utils/api');
 var util = require('../../utils/util');
 
 Page({
@@ -17,21 +17,15 @@ Page({
   */
   setBanner: function () {
     let that = this;
-    util.fetch('http://api.cyb.kuaiqiangche.com/event/advertise/banner', function (data) {
-      that.setData({
-        banner: data.data
-      });
-    });
-  },
-  /**
-   * 首页文字广告
-   */
-  setTxtAds: function(){
-    let that = this;
-    util.fetch('http://api.cyb.kuaiqiangche.com/event/advertise/roll', function (data) {
-      that.setData({
-        txtAds: data.data[0]
-      });
+    api.getAdByType({
+      data: {
+        adpos: 3,
+      },
+      success: (res) => {
+        self.setData({
+          banner: data.result
+        });
+      },
     });
   },
   /**

@@ -1,13 +1,12 @@
-const apiURL = 'http://api.breadtrip.com';
+const apiURL = 'http://www.yunchehudong.com/yuncarcms/api';
 
 const wxRequest = (params, url) => {
   wx.request({
     url,
-    method: params.method || 'GET',
+    method: params.method || 'POST',
     data: params.data || {},
     header: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/x-www-form-urlencoded',
     },
     success(res) {
       if (params.success) {
@@ -27,6 +26,12 @@ const wxRequest = (params, url) => {
   });
 };
 
+const getWelfareTypeList = (params) => {
+  wxRequest(params, `${apiURL}/v1/welfaretypelist.sdo`);
+}
+const getAdByType = (params) => {
+  wxRequest(params, `${apiURL}/searchAdvertisementByType.sdo`);
+}
 const getHotTripList = (params) => {
   wxRequest(params, `${apiURL}/v2/index/`);
 };
@@ -65,4 +70,6 @@ module.exports = {
   getUserInfoByID,
   getWaypointInfoByID,
   getWaypointReplyByID,
+  getWelfareTypeList,
+  getAdByType
 };
