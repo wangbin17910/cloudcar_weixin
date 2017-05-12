@@ -9,8 +9,8 @@ Page({
     autoplay: true,
     interval: 2000,
     duration: 1000,
-    txtAds: null,
-    advertise: null
+    shopType: [],
+    serviceType: []
   },
   /*
   * 首页banner
@@ -22,10 +22,24 @@ Page({
         adpos: 3,
       },
       success: (res) => {
-        that.setData({
-          banner: res.result
-        });
+        that.data.banner = res.result;
+        that.setData(that.data);
       },
+    });
+  },
+  setTypeList: function() {
+    var that = this;
+    api.getWelfareTypeList({
+      success: (res) => {
+        for (var i = res.result.length - 1; i >= 0; i--) {
+          if (res.result.showType == 1) {
+            that.data.shopType.push(res.result[i];
+          } else if (res.result.showType == 0) {
+            that.data.serviceType.push(res.result[i];
+          };
+        };
+        that.data.
+      }
     });
   },
   /**

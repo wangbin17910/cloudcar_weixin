@@ -13,50 +13,24 @@
     <text class="scroll-ads">搜索</text>
   </view>
   <view class="ads-list">
-    <view class="ads-item">
-        <image src="../../images/index_vip.png"></image>
-        <text>VIP</text>
-      </view>
-      <view class="ads-item">
-        <image src="../../images/index_nearby.png"></image>
-        <text>附近</text>
-      </view>
+    <image src="../../images/index_vip.png" class="ads-item"></image>
+    <image src="../../images/index_weizhang.png" class="ads-item"></image>
   </view>
   <view class="workbench">
     <text class="title">商家专区</text>
-    <view class="list">
-      <view class="items">
-        <image src="../../images/desk_publish@2x.png"></image>
-        <text>发布车源</text>
+    <view class="hot-list">
+      <view class="hot-item" wx:for="{{shopType}}" wx:key="unique" wx:for-item="item" data-id="{{item.type}}">
+        <image src="{{item.icon}}" mode="scaleToFill center"></image>
+        <text>{{item.typeName}}</text>
       </view>
     </view>
   </view>
   <view class="workbench">
     <text class="title">汽车服务</text>
-    <view class="list">
-      <view class="items">
-        <image src="../../images/home_car_source@2x.png" class="service-icon"></image>
-        <text>车源管理</text>
-      </view>
-      <view class="items">
-        <image src="../../images/home_logistical@2x.png" class="service-icon"></image>
-        <text>物流管理</text>
-      </view>
-      <view class="items">
-        <image src="../../images/home_logistical@2x.png" class="service-icon"></image>
-        <text>物流管理</text>
-      </view>
-      <view class="items">
-        <image src="../../images/home_logistical@2x.png" class="service-icon"></image>
-        <text>物流管理</text>
-      </view>
-      <view class="items">
-        <image src="../../images/home_finance@2x.png" class="service-icon"></image>
-        <text>车商金融</text>
-      </view>
-      <view class="items">
-        <image src="../../images/home_headlines@2x.png" class="service-icon"></image>
-        <text>车市头条</text>
+    <view class="hot-list">
+      <view class="hot-item" wx:for="{{serviceType}}" wx:key="unique" wx:for-item="item" data-id="{{item.type}}">
+        <image src="{{item.icon}}" mode="scaleToFill center"></image>
+        <text>{{item.typeName}}</text>
       </view>
     </view>
   </view>
