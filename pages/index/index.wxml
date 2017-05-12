@@ -9,13 +9,18 @@
     </view>
   </swiper>
   <view class="scroll-txt">
-  	<icon type="search" size="14"></icon>
+  	<icon type="search" size="14" style="margin: 0px 5px 0 0"></icon>
     <text class="scroll-ads">搜索</text>
   </view>
   <view class="ads-list">
-    <view class="ads-item" wx:for="{{advertise}}" wx:key="unique" wx:for-item="item">
-      <image src="{{item.image}}" mode="scaleToFill center" class="sub-banner"></image>
-    </view>
+    <view class="ads-item">
+        <image src="../../images/index_vip.png"></image>
+        <text>VIP</text>
+      </view>
+      <view class="ads-item">
+        <image src="../../images/index_nearby.png"></image>
+        <text>附近</text>
+      </view>
   </view>
   <view class="workbench">
     <text class="title">商家专区</text>
@@ -23,18 +28,6 @@
       <view class="items">
         <image src="../../images/desk_publish@2x.png"></image>
         <text>发布车源</text>
-      </view>
-      <view class="items">
-        <image src="../../images/desk_bid@2x.png"></image>
-        <text>户准寻车</text>
-      </view>
-      <view class="items">
-        <image src="../../images/desk_order@2x.png"></image>
-        <text>我的订单</text>
-      </view>
-      <view class="items">
-        <image src="../../images/desk_massage@2x.png"></image>
-        <text>通知消息</text>
       </view>
     </view>
   </view>
@@ -44,6 +37,14 @@
       <view class="items">
         <image src="../../images/home_car_source@2x.png" class="service-icon"></image>
         <text>车源管理</text>
+      </view>
+      <view class="items">
+        <image src="../../images/home_logistical@2x.png" class="service-icon"></image>
+        <text>物流管理</text>
+      </view>
+      <view class="items">
+        <image src="../../images/home_logistical@2x.png" class="service-icon"></image>
+        <text>物流管理</text>
       </view>
       <view class="items">
         <image src="../../images/home_logistical@2x.png" class="service-icon"></image>

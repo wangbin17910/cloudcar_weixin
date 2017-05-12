@@ -34,6 +34,5 @@ Page({
   onLoad: function () {
     var that = this;
     that.setBanner();
-    that.setModule();
   }
 });

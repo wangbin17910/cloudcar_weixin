@@ -38,7 +38,7 @@
   color: #333;
 }
 .workbench .title{
-  font-size:28rpx;
+  font-size:30rpx;
   padding: 20rpx 20rpx;
   margin-bottom: 40rpx;
   display: block;
