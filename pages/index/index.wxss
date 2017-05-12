@@ -14,7 +14,7 @@
 }
 .scroll-ads{
   text-align: center;
-  font-size: 20rpx;
+  font-size: 28rpx;
 }
 .ads-list{
   display: flex;
@@ -31,14 +31,14 @@
 }
 
 .workbench{
-  font-size: 20rpx;
+  font-size: 28rpx;
   background: #fff;
   padding-bottom: 30rpx;
   margin-bottom:10rpx;
   color: #333;
 }
 .workbench .title{
-  font-size:20rpx;
+  font-size:28rpx;
   padding: 20rpx 20rpx;
   margin-bottom: 40rpx;
   display: block;

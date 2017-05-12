@@ -22,28 +22,11 @@ Page({
         adpos: 3,
       },
       success: (res) => {
-        self.setData({
-          banner: data.result
+        that.setData({
+          banner: res.result
         });
       },
     });
-  },
-  /**
-   * 首页两块子banner
-   */
-  setSubBanner: function(){
-    let that = this;
-    util.fetch('http://api.cyb.kuaiqiangche.com/event/advertise/index', function (data) {
-      that.setData({
-        advertise: data.data
-      });
-    });
-  },
-  /**
-   * 模块入口
-   */
-  setModule: function(){
-
   },
   /**
    * 入口
@@ -51,8 +34,6 @@ Page({
   onLoad: function () {
     var that = this;
     that.setBanner();
-    that.setTxtAds();
-    that.setSubBanner();
     that.setModule();
   }
 });

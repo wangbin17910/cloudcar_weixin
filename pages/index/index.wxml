@@ -9,7 +9,8 @@
     </view>
   </swiper>
   <view class="scroll-txt">
-    <text class="scroll-ads">{{txtAds.title}}</text>
+  	<icon type="search" size="14"></icon>
+    <text class="scroll-ads">搜索</text>
   </view>
   <view class="ads-list">
     <view class="ads-item" wx:for="{{advertise}}" wx:key="unique" wx:for-item="item">
@@ -17,7 +18,7 @@
     </view>
   </view>
   <view class="workbench">
-    <text class="title">工作台</text>
+    <text class="title">商家专区</text>
     <view class="list">
       <view class="items">
         <image src="../../images/desk_publish@2x.png"></image>
@@ -38,7 +39,7 @@
     </view>
   </view>
   <view class="workbench">
-    <text class="title">服务</text>
+    <text class="title">汽车服务</text>
     <view class="list">
       <view class="items">
         <image src="../../images/home_car_source@2x.png" class="service-icon"></image>

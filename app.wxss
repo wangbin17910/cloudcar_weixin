@@ -1,5 +1,5 @@
 page{
-  font: 14px "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, STHeiti;
+  font: 14px "微软雅黑", Tahoma, STHeiti;
   line-height: 1.5;
 }
 .clearfix:after{
