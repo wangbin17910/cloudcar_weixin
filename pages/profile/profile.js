@@ -5,34 +5,29 @@ Page({
 		userInfo: {},
 		items: [
 			{
-				icon: '../../assets/images/iconfont-order.png',
+				icon: '../../images/iconfont-order.png',
 				text: '我的订单',
 				path: '/pages/order/list/index'
 			}, 
 			{
-				icon: '../../assets/images/iconfont-addr.png',
+				icon: '../../images/iconfont-addr.png',
 				text: '收货地址',
 				path: '/pages/address/list/index'
 			}, 
 			{
-				icon: '../../assets/images/iconfont-kefu.png',
+				icon: '../../images/iconfont-kefu.png',
 				text: '联系客服',
 				path: '18521708248',
 			}, 
 			{
-				icon: '../../assets/images/iconfont-help.png',
+				icon: '../../images/iconfont-help.png',
 				text: '常见问题',
 				path: '/pages/help/list/index',
 			},
 		],
 		settings: [
 			{
-				icon: '../../assets/images/iconfont-clear.png',
-				text: '清除缓存',
-				path: '0.0KB'
-			}, 
-			{
-				icon: '../../assets/images/iconfont-about.png',
+				icon: '../../images/iconfont-about.png',
 				text: '关于我们',
 				path: '/pages/about/index'
 			}, 
@@ -40,7 +35,6 @@ Page({
 	},
 	onLoad() {
 		this.getUserInfo()
-		this.getStorageInfo()
 	},
 	navigateTo(e) {
 		const index = e.currentTarget.dataset.index
@@ -66,22 +60,12 @@ Page({
 			return
 		}
 
-		App.getUserInfo()
-		.then(data => {
+		App.getUserInfo(data => {
 			console.log(data)
 			this.setData({
 				userInfo: data
 			})
 		})
-    },
-    getStorageInfo() {
-    	App.WxService.getStorageInfo()
-    	.then(data => {
-    		console.log(data)
-    		this.setData({
-    			'settings[0].path': `${data.currentSize}KB`
-    		})
-    	})
     },
     bindtap(e) {
     	const index = e.currentTarget.dataset.index

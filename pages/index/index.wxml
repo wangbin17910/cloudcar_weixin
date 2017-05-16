@@ -8,18 +8,24 @@
       </swiper-item>
     </view>
   </swiper>
-  <view class="scroll-txt">
+  <view class="scroll-txt" bindtap="search">
   	<icon type="search" size="14" style="margin: 0px 5px 0 0"></icon>
     <text class="scroll-ads">搜索</text>
   </view>
-  <view class="ads-list">
-    <image src="../../images/index_vip.png" class="ads-item"></image>
-    <image src="../../images/index_weizhang.png" class="ads-item"></image>
+  <view class="ads-list" bindtap="vipcard">
+  	<view class="ads-item">
+	    <image src="../../images/index_vip.png" mode="scaleToFill center"></image>
+	    <text>云车会员卡</text>
+    </view>
+    <view class="ads-item" bindtap="gotoWeizhang">
+	    <image src="../../images/index_weizhang.png" mode="scaleToFill center"></image>
+	    <text>违章查询</text>
+    </view>
   </view>
   <view class="workbench">
     <text class="title">商家专区</text>
     <view class="hot-list">
-      <view class="hot-item" wx:for="{{shopType}}" wx:key="unique" wx:for-item="item" data-id="{{item.type}}">
+      <view class="hot-item" wx:for="{{shopType}}" wx:key="unique" wx:for-item="item" data-id="{{item.type}}" bindtap="gotoShop">
         <image src="{{item.icon}}" mode="scaleToFill center"></image>
         <text>{{item.typeName}}</text>
       </view>
@@ -28,7 +34,7 @@
   <view class="workbench">
     <text class="title">汽车服务</text>
     <view class="hot-list">
-      <view class="hot-item" wx:for="{{serviceType}}" wx:key="unique" wx:for-item="item" data-id="{{item.type}}">
+      <view class="hot-item" wx:for="{{serviceType}}" wx:key="unique" wx:for-item="item" data-id="{{item.type}}" bindtap="gotoService">
         <image src="{{item.icon}}" mode="scaleToFill center"></image>
         <text>{{item.typeName}}</text>
       </view>

@@ -9,3 +9,4 @@ page{
   height: 0; 
   display: block; 
 }
+@import 'assets/styles/weui.wxss';

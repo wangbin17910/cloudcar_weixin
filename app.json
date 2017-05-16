@@ -22,7 +22,7 @@
     "borderStyle": "white",
     "backgroundColor": "#fff",
     "list": [{
-      "pagePath": "pages/welfare/welfare",
+      "pagePath": "pages/index/index",
       "iconPath": "images/welfare_normal.png",
       "selectedIconPath": "images/welfare_pressed.png",
       "text": "福利"
@@ -33,5 +33,5 @@
       "text": "我的"
     }]
   },
-  "debug": true
+  "debug": false
 }

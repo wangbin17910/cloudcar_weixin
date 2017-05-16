@@ -7,8 +7,8 @@ Page({
   data: {
     banner: null,
     autoplay: true,
-    interval: 2000,
-    duration: 1000,
+    interval: 5000,
+    duration: 800,
     shopType: [],
     serviceType: []
   },
@@ -22,7 +22,7 @@ Page({
         adpos: 3,
       },
       success: (res) => {
-        that.data.banner = res.result;
+        that.data.banner = res.data.result;
         that.setData(that.data);
       },
     });
@@ -31,16 +31,32 @@ Page({
     var that = this;
     api.getWelfareTypeList({
       success: (res) => {
-        for (var i = res.result.length - 1; i >= 0; i--) {
-          if (res.result.showType == 1) {
-            that.data.shopType.push(res.result[i];
-          } else if (res.result.showType == 0) {
-            that.data.serviceType.push(res.result[i];
+        for (var i = res.data.result.length - 1; i >= 0; i--) {
+        	var showType = res.data.result[i].showtype;
+          if (showType == "1") {
+            that.data.shopType.push(res.data.result[i]);
+          } else if (showType == "0") {
+            that.data.serviceType.push(res.data.result[i]);
           };
         };
-        that.data.
+        that.setData(that.data);
       }
     });
+  },
+  search: function() {
+  	var that = this;
+  },
+  vipcard: function() {
+  	var that = this;
+  },
+  gotoWeizhang:function() {
+
+  },
+  gotoShop: function() {
+
+  },
+  gotoService: function() {
+
   },
   /**
    * 入口
@@ -48,5 +64,6 @@ Page({
   onLoad: function () {
     var that = this;
     that.setBanner();
+    that.setTypeList();
   }
 });
