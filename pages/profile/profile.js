@@ -6,22 +6,22 @@ Page({
 		items: [
 			{
 				icon: '../../images/iconfont-order.png',
-				text: '我的订单',
+				text: '我的福利',
 				path: '/pages/order/list/index'
 			}, 
 			{
 				icon: '../../images/iconfont-addr.png',
-				text: '收货地址',
+				text: '每日签到',
 				path: '/pages/address/list/index'
 			}, 
 			{
 				icon: '../../images/iconfont-kefu.png',
-				text: '联系客服',
+				text: '我的折扣',
 				path: '18521708248',
 			}, 
 			{
 				icon: '../../images/iconfont-help.png',
-				text: '常见问题',
+				text: '我的代金券',
 				path: '/pages/help/list/index',
 			},
 		],
@@ -66,22 +66,6 @@ Page({
 				userInfo: data
 			})
 		})
-    },
-    bindtap(e) {
-    	const index = e.currentTarget.dataset.index
-		const path = e.currentTarget.dataset.path
-
-		switch(index) {
-			case 0:
-				App.WxService.showModal({
-		            title: '友情提示', 
-		            content: '确定要清除缓存吗？', 
-		        })
-		        .then(data => data.confirm == 1 && App.WxService.clearStorage())
-				break
-			default:
-				App.WxService.navigateTo(path)
-		}
     },
     logout() {
     	App.WxService.showModal({

@@ -29,6 +29,9 @@ const wxRequest = (params, url) => {
 const getWelfareTypeList = (params) => {
   wxRequest(params, `${apiURL}/v1/welfaretypelist.sdo`);
 }
+const getMerchantListByType = (params) => {
+  wxRequest(params, `${apiURL}/v2/findWelfareList.sdo`);
+}
 const getAdByType = (params) => {
   wxRequest(params, `${apiURL}/searchAdvertisementByType.sdo`);
 }
@@ -71,5 +74,6 @@ module.exports = {
   getWaypointInfoByID,
   getWaypointReplyByID,
   getWelfareTypeList,
+  getMerchantListByType,
   getAdByType
 };

@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/merchant/merchant",
     "pages/explore/explore",
     "pages/destination/destination",
     "pages/poi_list/poi_list",

@@ -56,7 +56,9 @@ Page({
 
   },
   gotoService: function() {
-
+	wx.navigateTo({
+      url: '../merchant/merchant?type=${data.type}',
+    });
   },
   /**
    * 入口
