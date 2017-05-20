@@ -25,7 +25,7 @@
   <view class="workbench">
     <text class="title">商家专区</text>
     <view class="hot-list">
-      <view class="hot-item" wx:for="{{shopType}}" wx:key="unique" wx:for-item="item" data-id="{{item.type}}" bindtap="gotoShop">
+      <view class="hot-item" wx:for="{{shopType}}" wx:key="unique" wx:for-item="item" data-id="{{item.type}}" data-title="{{item.typeName}}" bindtap="gotoShop">
         <image src="{{item.icon}}" mode="scaleToFill center"></image>
         <text>{{item.typeName}}</text>
       </view>
@@ -34,7 +34,7 @@
   <view class="workbench">
     <text class="title">汽车服务</text>
     <view class="hot-list">
-      <view class="hot-item" wx:for="{{serviceType}}" wx:key="unique" wx:for-item="item" data-id="{{item.type}}" bindtap="gotoService">
+      <view class="hot-item" wx:for="{{serviceType}}" wx:key="unique" wx:for-item="item" data-id="{{item.type}}" data-title="{{item.typeName}}" bindtap="gotoService">
         <image src="{{item.icon}}" mode="scaleToFill center"></image>
         <text>{{item.typeName}}</text>
       </view>

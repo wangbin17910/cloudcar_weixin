@@ -52,12 +52,18 @@ Page({
   gotoWeizhang:function() {
 
   },
-  gotoShop: function() {
-
-  },
-  gotoService: function() {
+  gotoShop: function(res) {
+	let param = res.currentTarget.dataset, title = param.title, id=param.id
+    var url = "../merchant/merchant?type="+id+"&title="+ title;
 	wx.navigateTo({
-      url: '../merchant/merchant?type=${data.type}',
+      url: url
+    });
+  },
+  gotoService: function(res) {
+  	let param = res.currentTarget.dataset, title = param.title, id=param.id
+    var url = "../merchant/merchant?type="+id+"&title="+ title;
+	wx.navigateTo({
+      url: url
     });
   },
   /**

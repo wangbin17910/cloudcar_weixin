@@ -7,14 +7,15 @@ Page({
   data: {
 	merchantList:[],
     currentType:0, 
-    pageNum:0
+    pageNum:1,
+    isNextPage:true
   },
   /*
   * 首页banner
   */
-  getMerchantList: function () {
+  getMerchantList: function (isClean) {
   	if(isClean) {
-      this.data.pageNum = 0;
+      this.data.pageNum = 1;
       if (this.data.merchantList.length > 0) {
       	this.data.merchantList.splice(0, this.data.merchantList.length);
       };     
@@ -26,36 +27,25 @@ Page({
       data: {
         startpage: that.data.pageNum,
         pagesize: 20,
-        welfaretype: that.data.currentType    
+        welfaretype: that.data.currentType,
+        latitude: 0,
+        longitude: 0
       },
       success: (res) => {
-        that.data.merchantList = res.data.result;
-        that.setData(that.data.merchantList);
-      },
-    });
-  },
-  setTypeList: function() {
-    var that = this;
-    api.getWelfareTypeList({
-      success: (res) => {
-        for (var i = res.data.result.length - 1; i >= 0; i--) {
-        	var showType = res.data.result[i].showtype;
-          if (showType == "1") {
-            that.data.shopType.push(res.data.result[i]);
-          } else if (showType == "0") {
-            that.data.serviceType.push(res.data.result[i]);
-          };
-        };
+      	that.data.merchantList = that.data.merchantList.concat(res.data.result);
+      	that.data.isNextPage = res.data.isNextPage;
         that.setData(that.data);
-      }
+      },
     });
   },
   onPullDownRefresh:function(){
-    this.getList(true, this.data.currentType)
+    this.getMerchantList(true)
   },
 
   onReachBottom: function() {
-     this.getList(false, this.data.currentType)
+  	if (this.isNextPage) {
+		this.getMerchantList(false)
+  	};
   },
 
   onShareAppMessage: function() {
@@ -70,13 +60,14 @@ Page({
 	    wx.navigateTo({
 	        url: '../activitydetail/activitydetail?id=' + id
 	    })
-	    // console.log(e);
 	},
   /**
    * 入口
    */
-  onLoad: function (isClean) {
+  onLoad: function (option) {
     var that = this;
-    that.getMerchantList();
+    this.data.currentType = option.type;
+    wx.setNavigationBarTitle({title:option.title});
+    that.getMerchantList(true);
   }
 });
