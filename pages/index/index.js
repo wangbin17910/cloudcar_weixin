@@ -44,7 +44,10 @@ Page({
     });
   },
   search: function() {
-  	var that = this;
+    var url = "../search/search";
+	wx.navigateTo({
+      url: url
+    });
   },
   vipcard: function() {
   	var that = this;

@@ -71,14 +71,14 @@
 
 .item-welfare {
     float: right;
-    width: 154rpx;
+    width: 150rpx;
     height: 40rpx;
     text-align: center;
     font-size: 24rpx;
     line-height: 40rpx;
     color: #fb5d5d;
     border: 1rpx solid #fb5d5d;
-    border-radius: 4rpx;
+    border-radius: 8rpx;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
