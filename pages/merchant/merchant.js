@@ -58,7 +58,7 @@ Page({
 	gotoMerchantDetail: function (res) {
 	    var id = res.currentTarget.dataset.value;
 	    wx.navigateTo({
-	        url: '../activitydetail/activitydetail?id=' + id
+	        url: '../merchant_detail/detail?id=' + id
 	    })
 	},
   /**

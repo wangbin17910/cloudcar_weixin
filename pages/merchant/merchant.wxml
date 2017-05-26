@@ -2,7 +2,7 @@
 <view>
     <!-- list start -->
     <view class="lists-box">
-        <navigator wx:for="{{merchantList}}" wx:key="id" class="item-box" url="../course/course?id={{item.courseId}}">
+        <navigator wx:for="{{merchantList}}" wx:key="id" class="item-box" url="../merchant_detail/detail?id={{item.serviceuserid}}">
             <view class="item-img">
                 <image src="{{item.servicepicurl}}" mode="aspectFill"></image>
             </view>

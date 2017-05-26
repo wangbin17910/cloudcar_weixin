@@ -4,7 +4,7 @@
     <input placeholder="搜索门店/福利" auto-focus class="search_bar_txt" bindblur="searchName"/>
     <text class="search_btn" bindtap="searchWelfare">搜索</text>          
   </view>
-  	<navigator wx:for="{{merchantList}}" wx:key="" class="hot-item-box" url="../activitydetail/activitydetail?id={{item.course.courseId}}">
+  	<navigator wx:for="{{merchantList}}" wx:key="" class="hot-item-box" url="../merchant_detail/detail?id={{item.serviceuserid}}">
         <view class="hot-item-top">
             <view class="hot-img">
                 <image mode="aspectFill" src="{{item.servicepicurl}}"></image>

@@ -38,6 +38,12 @@ const getAdByType = (params) => {
 const searchWelfare = (params) => {
   wxRequest(params, `${apiURL}/v2/searchWelfareListByName.sdo`);
 }
+const getMerchantDetail = (params) => {
+  wxRequest(params, `${apiURL}/findMerchantWelfareList.sdo`);
+}
+const getWelfareDetail = (params) => {
+  wxRequest(params, `${apiURL}/findMerchantWelfareList.sdo`);
+}
 
 const getHotTripList = (params) => {
   wxRequest(params, `${apiURL}/v2/index/`);
@@ -80,5 +86,7 @@ module.exports = {
   getWelfareTypeList,
   searchWelfare,
   getMerchantListByType,
+  getMerchantDetail,
+  getWelfareDetail,
   getAdByType
 };

@@ -3,6 +3,8 @@
     "pages/index/index",
     "pages/merchant/merchant",
     "pages/search/search",
+    "pages/merchant_detail/detail",
+    "pages/welfare_detail/detail",
     "pages/user/user",
     "pages/explore/explore",
     "pages/destination/destination",
