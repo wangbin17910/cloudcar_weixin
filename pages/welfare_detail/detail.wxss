@@ -1,11 +1,12 @@
-.maps{ 
-	width: 750rpx; 
-	height: 440rpx;
-	overflow: hidden;
+.avatar {
+    width: 100%;
+    border: 0;
+    margin: 0;
+    padding: 0;
 }
 .detail-box {
     position: relative;
-    padding: 22rpx 30rpx;
+    padding: 22rpx 30rpx 10rpx 30rpx;
     background-color: #fff;
 }
 
@@ -181,13 +182,18 @@
 
 .join-group {
     width: 200rpx;
-    height: 40rpx;
-    line-height: 40rpx;
+    height: 45rpx;
+    line-height: 45rpx;
     text-align: center;
     font-size: 26rpx;
     color: #fb5d5d;
     border: 1rpx solid #fb5d5d;
     border-radius: 4rpx;
+}
+
+.market-price{
+	margin-left: 40rpx;
+	color: #999;
 }
 
 .red-color {
@@ -197,7 +203,8 @@
 
 .goods-detail {
     background-color: rgb(255,255,255);
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    color: #fb5d5d;
 }
 
 .goods-detail-text {

@@ -9,20 +9,11 @@ Page({
   },
   getWelfareDetail: function() {
     var that = this;
-    api.getMerchantDetail({
+    api.getWelfareDetail({
       data: {
         welfareid: that.data.welfareId,
       },
       success: (res) => {
-      	res.data.result.markers = [{
-      		id: "1",
-            latitude: res.data.result.latitude,
-            longitude: res.data.result.longitude,
-            width: 25,
-            height: 25,
-            iconPath: "../../images/merchant_icon.png",
-            title: res.data.result.shopname
-      	}];
         that.setData(res.data.result);
       }
     });
@@ -33,7 +24,7 @@ Page({
     })
   },
   callMerchant: function(view) {
-  	var tel = view.detail.value;
+  	var tel = view.currentTarget.dataset.value;
   	wx.makePhoneCall({
       phoneNumber: tel,
     })
@@ -42,7 +33,7 @@ Page({
    * 入口
    */
   onLoad: function (option) {
-  	this.data.merchantId = option.id;
+  	this.data.welfareId = option.id;
     this.getWelfareDetail();
   }
 });

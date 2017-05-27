@@ -39,16 +39,7 @@ Page({
 	navigateTo(e) {
 		const index = e.currentTarget.dataset.index
 		const path = e.currentTarget.dataset.path
-
-		switch(index) {
-			case 2:
-				App.WxService.makePhoneCall({
-					phoneNumber: path
-				})
-				break
-			default:
-				App.WxService.navigateTo(path)
-		}
+		App.WxService.navigateTo(path)
     },
     getUserInfo() {
     	const userInfo = App.globalData.userInfo

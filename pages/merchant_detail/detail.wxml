@@ -1,4 +1,4 @@
-<map class="maps" id="map2" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{22}}" markers="{{markers}}"></map>
+<map class="maps" id="map2" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{20}}" markers="{{markers}}"></map>
 
 <!-- detail content start -->
 <view class="detail-box">

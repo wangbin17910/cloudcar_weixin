@@ -1,27 +1,34 @@
-<map class="maps" id="map2" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{22}}" markers="{{markers}}"></map>
+<image src="{{welfareJson.servicepicurl}}" class="avatar" mode="aspectFill"></image>
 
 <!-- detail content start -->
 <view class="detail-box">
-    <view class="detail-title">{{shopname}}</view>
+    <view class="detail-title">{{welfareJson.servicename}}</view>
     <view class="detail-content">
         <view class="detail-price">
-            <text class="new-price">评分：{{pjStar}}分</text>
+            <text class="new-price">云车价:￥{{welfareJson.discountprice}}</text>
+            <text class="market-price">市场价:￥{{welfareJson.marketprice}}</text>
         </view>
-        <view class="join-group" data-value="{{shoptel}}" bindtap="callMerchant">拨打商家电话</view>
+        <view class="join-group" data-value="{{welfareJson.shoptel}}" bindtap="callMerchant">拨打商家电话</view>
     </view>
     <view class="icon-img"></view>
 </view>
 <!-- / detail content end -->
 
 <view class="otherAddress">
-    <text>地址：{{shopaddress}}</text>
+    <text>地址：{{welfareJson.shopaddress}}</text>
 </view>
 
-<view class="goods-detail" wx:for="{{welfareListType}}" wx:key="id">
-    <view class="title-box">{{item.typeName}}</view>
-    <view class="goods-detail-text" wx:for="{{item.welfareListTypeEntity}}" wx:for-item="cell" wx:key="name" data-value="{{cell.welfareid}}" bindtap="gotoWelfareDetail">
-    	{{cell.servicename}}
-    	<text class="item-welfare">￥{{cell.discountprice}}</text>
+<view wx:if="{{welfareJson.abstr!=''}}" class="goods-detail">
+    <view class="title-box">服务内容</view>
+    <view class="goods-detail-text">
+    	{{welfareJson.abstr}}
+    </view>
+</view>
+
+<view wx:if="{{welfareJson.servicerequire!=''}}" class="goods-detail">
+    <view class="title-box">使用须知</view>
+    <view class="goods-detail-text">
+    	{{welfareJson.servicerequire}}
     </view>
 </view>
 
