@@ -34,4 +34,4 @@
 
 <view class="fight-group-title" bindtap="callService">*如商家无法服务或对商家不满意，请按此拨打售后</view>
 
-<view class="join" >立即购买</view>
+<view class="join" bindtap="buyWelfare">立即购买</view>

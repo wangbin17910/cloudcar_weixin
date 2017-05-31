@@ -29,6 +29,17 @@ Page({
       phoneNumber: tel,
     })
   },
+  buyWelfare:function(view) {
+	var vipId = view.currentTarget.dataset.value;
+	wx.showModal({
+	    title: '提示',
+	    content: '小程序目前暂不支持在线支付，请到APP完成支付',
+	    confirmColor: '#479de6',
+	    success: function(res) {
+	        
+	    }
+	})
+  },
   /**
    * 入口
    */

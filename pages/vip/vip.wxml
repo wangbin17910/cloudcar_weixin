@@ -1,39 +1,27 @@
-<view>
-    <scroll-view scroll-y="true" bindscrolltolower="update" scroll-top="{{scrollTop}}" class="layout"> <!--  scroll-top="{{scrollTop}}" -->
-
-        <!-- navbar start -->
-        <view class="navbar-box" id="navbar-box">
-            <scroll-view class="navbar scroll-view_H {{fixed}}" scroll-x="true" style="width: 100%;">
-                <text wx:for="{{tags}}" wx:key="" data-index="{{ index }}" class="{{(index == curTab)?'curNavigator':''}}" 
-                 bindtap="navLink">{{item.title}}</text>
-            </scroll-view>
-        </view>
-        <!-- / navbar end -->
-
-        <!-- list start -->
-        <view class="lists-box">
-            <navigator wx:for="{{list}}" wx:key="" class="item-box" url="../course/course?id={{item.courseId}}">
-                <view class="item-img">
-                    <image src="{{item.avatar}}" mode="center"></image>
-                </view>
-                <text class="item-title">{{item.title}}</text>
-                <text class="item-content">上课时间：{{item.startTime}}<text class="item-content-right">课时：{{item.period}}</text></text>
-                
-                <view class="item-btm">
-                    <view class="item-buy-people">
-                        <view></view>
-                        课程详情
-                    </view>
-                    <view class="item-price">¥{{item.price}}</view>
-                </view>
-            </navigator>
-        </view>
-        <!-- / list end -->
-
-     
-
-        <!-- prompt message start -->
-        <text class="{{(page*10>total) ? 'promptShow' : 'promptHide'}}">没有更多内容了</text>
-        <!-- / prompt message end -->
+<view class="movie">
+  <view class="nav_bar">
+    <scroll-view class="nav_bar_scroll" scroll-x="true">
+      <block wx:for="{{types}}" wx:key="" wx:for-item="type">
+        <block>
+          <view bindtap="changeType" class="{{type.value == currentType ? 'current' : ''}} scroll_item" data-value="{{type.value}}">{{type.title}}</view>
+        </block>
+      </block>
     </scroll-view>
+  </view>
+
+  <!-- 活动列表 -->
+  <view class="list">
+    <view class="card" wx:for="{{vipList}}" wx:key="{{item.id}}" data-value="{{item.id}}" bindTap="buyVIP">
+      <text class="type_text">VIP</text>
+      <view class="info">
+        <view class="f-name">
+          <text class="info_item">{{item.itemName}}</text> 
+        </view>
+        <view class="info_item" style="display:flex;flex-direction:row;align-items:center">
+          <text style="font-size:11pt;color:gray">{{item.describe}}</text>
+        </view>
+      </view>
+      <text class="money">{{item.amount/100}}元</text>
+    </view>
+  </view>
 </view>

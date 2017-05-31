@@ -5,13 +5,7 @@
     "pages/search/search",
     "pages/merchant_detail/detail",
     "pages/welfare_detail/detail",
-    "pages/user/user",
-    "pages/explore/explore",
-    "pages/destination/destination",
-    "pages/poi_list/poi_list",
-    "pages/trip_list/trip_list",
-    "pages/waypoint/waypoint",
-    "pages/trip/trip",
+    "pages/vip/vip",
     "pages/profile/profile"
   ],
   "window": {

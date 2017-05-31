@@ -12,8 +12,8 @@
   	<icon type="search" size="14" style="margin: 0px 5px 0 0"></icon>
     <text class="scroll-ads">搜索</text>
   </view>
-  <view class="ads-list" bindtap="vipcard">
-  	<view class="ads-item">
+  <view class="ads-list">
+  	<view class="ads-item" bindtap="vipcard">
 	    <image src="../../images/index_vip.png" mode="scaleToFill center"></image>
 	    <text>云车会员卡</text>
     </view>

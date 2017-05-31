@@ -36,6 +36,9 @@ Page({
       	that.data.isNextPage = res.data.isNextPage;
         that.setData(that.data);
       },
+      complete: () => {
+		wx.stopPullDownRefresh()
+      }
     });
   },
   onPullDownRefresh:function(){
@@ -43,7 +46,7 @@ Page({
   },
 
   onReachBottom: function() {
-  	if (this.isNextPage) {
+  	if (this.data.isNextPage) {
 		this.getMerchantList(false)
   	};
   },

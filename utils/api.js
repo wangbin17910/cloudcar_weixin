@@ -1,4 +1,5 @@
 const apiURL = 'http://www.yunchehudong.com/yuncarcms/api';
+const payURL = 'http://www.yunchehudong.com/yuncarcms/pay';
 
 const wxRequest = (params, url) => {
   wx.request({
@@ -44,6 +45,9 @@ const getMerchantDetail = (params) => {
 const getWelfareDetail = (params) => {
   wxRequest(params, `${apiURL}/showWelfareDetail.sdo`);
 }
+const getVIPInfo = (params) => {
+  wxRequest(params, `${payURL}/findPayItemList.sdo`);
+};
 const getUserInfoByID = (params) => {
   wxRequest(params, `${apiURL}/users/${params.query.userId}/v2`);
 };
@@ -55,5 +59,6 @@ module.exports = {
   getMerchantListByType,
   getMerchantDetail,
   getWelfareDetail,
+  getVIPInfo,
   getAdByType
 };
