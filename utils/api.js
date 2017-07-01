@@ -1,5 +1,5 @@
-const apiURL = 'https://www.yunchehudong.cn/yuncarcms/api';
-const payURL = 'https://www.yunchehudong.cn/yuncarcms/pay';
+const apiURL = 'https://www.yunchehudong.com/yuncarcms/api';
+const payURL = 'https://www.yunchehudong.com/yuncarcms/pay';
 
 const wxRequest = (params, url) => {
   wx.request({

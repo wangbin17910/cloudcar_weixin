@@ -51,5 +51,13 @@ Page({
   onLoad: function (option) {
   	this.data.merchantId = option.id;
     this.getMerchantDetail();
+  },
+
+  onShareAppMessage: function () {
+    let that = this;
+    return {
+      title: '商家详情',
+      path: 'pages/merchant_detail/detail?id=' + that.merchantId
+    }
   }
 });

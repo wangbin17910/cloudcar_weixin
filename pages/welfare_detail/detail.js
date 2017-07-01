@@ -46,5 +46,13 @@ Page({
   onLoad: function (option) {
   	this.data.welfareId = option.id;
     this.getWelfareDetail();
+  },
+
+  onShareAppMessage: function () {
+    let that = this;
+    return {
+      title: '商品详情',
+      path: 'pages/welfare_detail/detail?id=' + that.welfareId
+    }
   }
 });

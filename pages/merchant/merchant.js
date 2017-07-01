@@ -8,7 +8,8 @@ Page({
 	merchantList:[],
     currentType:0, 
     pageNum:1,
-    isNextPage:true
+    isNextPage:true,
+    title:""
   },
   /*
   * 首页banner
@@ -52,9 +53,10 @@ Page({
   },
 
   onShareAppMessage: function() {
+    var that = this;
      return {
-       title:'优惠普洗商家',
-       path:'pages/merchant/merchant'
+       title:that.data.title,
+       path: 'pages/merchant/merchant?type=' + that.data.currentType + "&title=" + that.data.title
      }
  },
 
@@ -70,6 +72,7 @@ Page({
   onLoad: function (option) {
     var that = this;
     this.data.currentType = option.type;
+    this.data.title = option.title;
     wx.setNavigationBarTitle({title:option.title});
     that.getMerchantList(true);
   }

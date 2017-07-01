@@ -85,5 +85,12 @@ Page({
     var that = this;
     that.setBanner();
     that.setTypeList();
+  },
+
+  onShareAppMessage: function () {
+    return {
+      title: '云车',
+      path: 'pages/index/index'
+    }
   }
 });
