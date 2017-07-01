@@ -57,7 +57,7 @@ Page({
   gotoWeizhang:function() {
 	wx.showModal({
 	    title: '提示',
-	    content: '小程序暂不支持违章查询，目前正在紧锣密鼓开发中，请稍候…',
+	    content: '暂不支持违章查询，目前正在紧锣密鼓开发中，请稍候…',
 	    confirmColor: '#479de6',
 	    success: function(res) {
 	        
